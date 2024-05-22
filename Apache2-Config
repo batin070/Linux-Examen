@@ -1,0 +1,74 @@
+Stap 1: Apache2 installeren en configureren
+CLI openen:
+Open de terminal op je openSUSE systeem.
+
+Eerst inloggen in je root
+
+Apache2 installeren:
+
+"sudo zypper install apache2"
+Apache2 service aanzetten:
+
+
+sudo systemctl start apache2
+Maak het bestand index.html in de map /srv/www/htdocs:
+
+
+sudo touch /srv/www/htdocs/index.html
+Index.html bewerken met vi:
+
+
+"sudo vi /srv/www/htdocs/index.html"
+Voeg bijvoorbeeld de volgende HTML-code toe:
+
+html
+Code kopiëren
+<html>
+<head>
+    <title>Welkom op mijn website</title>
+</head>
+<body>
+    <h1>Hallo, wereld!</h1>
+    <p>Dit is een testpagina voor Apache2 op openSUSE.</p>
+</body>
+</html>
+
+Apache2 service herstarten:
+
+
+"sudo systemctl restart apache2"
+Config bestand controleren:
+
+
+"sudo apache2ctl configtest"
+Zorg ervoor dat je de melding "Syntax OK" krijgt.
+
+Om te testen voer je het volgende commando uit:
+
+
+"w3m localhost"
+Of open Firefox en typ localhost in de adresbalk.
+
+
+Stap 2: Hostnaam wijzigen
+
+Voeg jouw IP-adres en website naam toe in het hosts bestand:
+
+Open het hosts bestand met vi:
+
+
+"sudo vi /etc/hosts"
+Voeg de volgende regel toe (vervang jouw_ip_adres en jouw_website door de juiste waarden):
+
+"jouw_ip_adres jouw_website"
+Apache2 service herstarten:
+
+
+"sudo systemctl restart apache2"
+Om te testen voer je het volgende commando uit:
+
+
+"w3m jouw_website"
+Of open Firefox en typ jouw_website in de adresbalk.
+
+Dit stappenplan moet je helpen Apache2 te installeren, configureren en je hostname te wijzigen op openSUSE.
