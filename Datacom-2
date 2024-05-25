@@ -1,0 +1,55 @@
+Commando’s voor de multi layer switch: Multi layer switch
+
+Int gig range 1/0/2 -5
+
+Swmode acces trunk
+
+VTP Domain guus
+
+VTP mode server
+
+Int vlan 10
+
+Ip add 192.168.10.1
+
+Ip dhcp pool v10
+
+Network 192.168.10.0 255.255.255.0
+
+Default router 192.168.10.1
+
+Switch
+
+Vtp domain 
+
+Vtp mode client
+
+Int range fa0/1 -5
+
+Swport mode acces
+
+Swport acces vlan 10
+
+Int range fa0/6 -10
+
+Swport mode acces
+
+Swport acces vlan 20
+
+Int range fa0/11 -15
+
+Swport mode acces
+
+Swport acces vlan 30
+
+Int range fa0/16 - 20
+
+Swport mode acces
+
+Swport acces vlan 40
+
+Int range fa0/21 - 24
+
+Swport mode acces
+
+Swport acces vlan 50
